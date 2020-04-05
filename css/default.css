@@ -1,0 +1,396 @@
+/* Universal Selectors */
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+  transition: 0.2s color;
+}
+
+a:hover {
+  color: yellowGreen;
+  transition: 0.2s;
+}
+
+main {
+  display: inline-block;
+  width: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Navbar Section */
+nav {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px 2px silver;
+  opacity: 0.75;
+  z-index: 10;
+}
+
+nav .container {
+  display: inline-flex;
+  margin: 20px auto;
+}
+
+.navMenu {
+  display: none;
+  font-size: 1.5em;
+}
+
+.navGroupLEFT,
+.navGroupRIGHT {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navGroupLEFT p,
+.navGroupRIGHT p,
+.navMenu {
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  margin: auto 22px;
+  transition: 0.2s;
+}
+
+.navGroupLEFT p:hover,
+.navGroupRIGHT p:hover {
+  color: green;
+  transition: 0.1s;
+}
+
+/* Header Section */
+.product-img-1 {
+  text-align: center;
+}
+
+.product-img-1 img {
+  display: inline-block;
+  height: 75%;
+  width: 75%;
+}
+
+.product-img-1 .badges img {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  height: 120px;
+  width: 120px;
+}
+
+.badges {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.badges img:nth-child(1) {
+  position: relative;
+  top: 3px;
+}
+
+.badges img:nth-child(2):hover {
+  cursor: pointer;
+}
+
+.badges img:nth-child(3) {
+  position: relative;
+  top: -6px;
+  height: 100px;
+  width: 140px;
+}
+
+.product-title {
+  display: flex;
+  font: 1.5rem 'Roboto Condensed', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.product-title img {
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+}
+
+.product-title-heading {
+  padding-top: 2rem;
+}
+
+/* Article Section */
+.product-main {
+  margin: 100px 50px;
+}
+
+.product-main section {
+  margin: 100px auto;
+}
+
+.product-main h3 {
+  font: bold 2rem 'Oswald', sans-serif;
+  text-decoration: underline;
+  margin: 0px 50px 10px;
+}
+
+.product-main p {
+  font: 600 1rem 'Raleway', sans-serif;
+  margin: 0px 50px;
+}
+
+.product-main ol {
+  margin-top: 10px;
+}
+
+.product-main li {
+  font: 600 1rem 'Raleway', sans-serif;
+  margin: 5px 25px;
+}
+
+.product-main-buy-now,
+.product-main-visits-counter {
+  text-align: center;
+}
+
+.product-main-buy-now img {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+}
+
+.product-main-visits-counter img {
+  display: inline-block;
+  height: 130px;
+  width: 180px;
+}
+
+.author-section {
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.author-pic {
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.interviewed-logos {
+  display: flex;
+  margin-bottom: -20px;
+}
+
+.int-logo {
+  height: 150px;
+  width: 150px;
+}
+
+.int-logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.int-logo:last-child {
+  height: 150px;
+  width: 200px;
+}
+
+.buy-now-section {
+  display: flex;
+}
+
+.product-description {
+  width: 50%;
+}
+
+.product-description h3 {
+  display: inline-block;
+  transition: 0.4s color;
+  margin: 10px auto;
+}
+
+.product-description h3:hover {
+  color: green;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.product-description p {
+  margin: 10px auto;
+}
+
+.product-img-2 {
+  height: 500px;
+  width: 250px;
+}
+
+.product-img-2 img {
+  height: 100%;
+  width: 100%;
+}
+
+.payment-img {
+  text-align: center;
+}
+
+.payment-img img {
+  display: inline-block;
+  margin: 2rem auto;
+  height: 40%;
+  width: 40%;
+}
+
+.clickbank-img {
+  text-align: center;
+}
+
+.clickbank-img img {
+  display: inline-block;
+  margin: 2rem auto;
+  height: 50px;
+  width: 250px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex img {
+  border-radius: 10%;
+}
+
+.pre-footer {
+  background-color: gold;
+  padding: 20px;
+}
+
+.pre-footer-heading {
+  display: inline-flex;
+  border: 2px black solid;
+  margin: auto;
+  padding: 5px;
+  font-family: 'Oswald', sans-serif;
+  cursor: default;
+}
+
+.article-menu {
+  text-transform: capitalize;
+  padding: 10px auto;
+}
+
+.article-menu li {
+  font: 0.9em 'Roboto Condensed', sans-serif;
+  text-decoration: underline;
+  margin: 5px auto;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.article-menu li:hover {
+  color: green;
+  transition: 0.2s;
+}
+
+footer {
+  height: 81px;
+  background-color: yellowGreen;
+  padding: 18px;
+}
+
+footer p {
+  font: 0.9em 'Roboto Condensed', sans-serif;
+  padding: 2px;
+  text-align: center;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1140px) {
+
+  .navGroupLEFT,
+  .navGroupRIGHT {
+    display: none;
+  }
+
+  nav {
+    display: inline-block;
+    padding: 0px 10px;
+  }
+
+  .navMenu {
+    display: inherit;
+    float: right;
+    margin: 1.7rem 0.675rem;
+    padding: 5px 20px;
+    border: 2px solid green;
+    border-radius: 100px;
+    font-weight: bold;
+  }
+
+  .navMenu:hover {
+    background-color: green;
+    color: white;
+    transition: 0.1s;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .pre-footer-heading {
+    letter-spacing: 10px;
+  }
+
+  .article-menu li {
+    margin: 10px 0px;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .flex section {
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .flex section ul {
+    list-style: none;
+    padding: 0 0;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .product-title img {
+    display: none;
+  }
+
+  .interviewed-logos {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .product-main {
+    margin: 100px 10px;
+  }
+
+  .buy-now-section {
+    flex-direction: column-reverse;
+  }
+
+  .product-description {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 400px) {
+  footer {
+    font-size: 1em;
+  }
+}

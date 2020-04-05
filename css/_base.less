@@ -1,0 +1,132 @@
+// Mixins
+
+.customCssReset(@fontOption: true; @rules...) {
+  * {
+    margin: 0 auto;
+    box-sizing: border-box;
+    & when (@fontOption) { font-family: sans-serif; }
+    @rules();
+  }
+}
+
+.universalNoSelect() {
+  .noselect {
+    -webkit-touch-callout: none; // iOS Safari
+      -webkit-user-select: none; // Safari
+       -khtml-user-select: none; // Konqueror HTML
+         -moz-user-select: none; // Firefox
+          -ms-user-select: none; // Internet Explorer/Edge
+              user-select: none; // Non-prefixed version, currently
+                                 //  supported by Chrome and Opera
+  }
+}
+
+.universalize(@prefix; @property; @value) {
+  .loop(@counter: 1); // finally! it works -_-
+
+  .loop(@counter) when (@counter <= length(@prefix)) {
+    @theBoy: extract(@prefix, @counter);
+    -@{theBoy}-@{property}: @value;
+    .loop(@counter + 1);
+  }
+}
+
+.setDisplayType(@type; @selector) { // type in selector in full form (. , #)
+  @{selector} {
+    display: @type;
+  }
+}
+
+#setArea {
+  .default(@height; @width: null) {
+    & when not(isnumber(@width)) and not(isstring(@width)) {
+      height: @height;
+      width: @height;
+    }
+
+    & when (isnumber(@width)) or (isstring(@width)) { // not being DRY ;(
+      height: @height;
+      width: @width;
+    }
+  }
+
+  .withSelector(@height; @width; @selector) {
+    @{selector} {
+      height: @height;
+      & when (isnumber(@width)) { width: @width; }
+    }
+  }
+}
+
+#setPosWithCoords {
+  .default(@position; @top; @left) {
+    position: @position;
+    & when (isnumber(@top)) { top: @top; }
+    & when (isnumber(@left)) { left: @left; }
+  }
+
+  .withSelector(@position; @top; @left; @selector) { // solve params - DONE :\
+    @{selector} {
+      position: @position;
+      & when (isnumber(@top)) { top: @top; }
+      & when (isnumber(@left)) { left: @left; }
+    }
+  }
+}
+
+.colorizeButtonOnHover(@color; @bgColor; @selector) {
+  @{selector}:hover {
+    background-color: @bgColor;
+    color: @color;
+    transition: .2s;
+  }
+}
+
+.unifyLinksColor(@color, @visited: false, @active: false) {
+  a {
+    color: @color;
+
+    &:visited when (@visited) {
+      color: @color;
+    }
+
+    &:active when (@active) {
+      color: @color;
+    }
+  }
+}
+
+#mqMixins{
+  .createMediaQuery(@isMin; @isMax; @width; @widthOptional; @rules)  when (default()) {
+    @media only screen and (width: @width) {
+      @rules();
+    }
+  }
+
+  .createMediaQuery(@isMin; @isMax; @width; @widthOptional; @rules)  when (@isMin) and not(@isMax) {
+    @media only screen and (min-width: @width) {
+      @rules();
+    }
+  }
+
+  .createMediaQuery(@isMin; @isMax; @width; @widthOptional; @rules)  when (@isMax) and not(@isMin) {
+    @media only screen and (max-width: @width) {
+      @rules();
+    }
+  }
+
+  .createMediaQuery(@isMin; @isMax; @width; @widthOptional; @rules)  when (@isMin) and (@isMax) {
+    @media only screen and (min-width: @width) and (max-width: @widthOptional) {
+      @rules();
+    }
+  }
+}
+
+// Variables
+
+//* Colors
+
+@lightwhite: rgba(0, 0, 0, 0.04);
+@transparentWhite: rgba(255, 255, 255, .8);
+@transparentBlack: rgba(0, 0, 0, .5);
+@gta5Green: hsl(100, 40%, 45%);
